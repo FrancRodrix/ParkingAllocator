@@ -1,0 +1,254 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.demo"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:33:5-77
+11-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:33:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:4:4-66
+12-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:4:21-63
+13    <uses-permission android:name="android.permission.ACCEPT_HANDOVER" />
+13-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:5:5-74
+13-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:5:22-71
+14    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+14-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:6:5-85
+14-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:6:22-82
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+15-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:7:5-81
+15-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:7:22-78
+16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+16-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:8:5-79
+16-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:8:22-76
+17    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+17-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:9:5-79
+17-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:9:22-76
+18    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+18-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:10:5-77
+18-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:10:22-74
+19    <uses-permission android:name="android.permission.BODY_SENSORS" />
+19-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:11:5-71
+19-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:11:22-68
+20    <uses-permission android:name="android.permission.CALL_PHONE" />
+20-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:12:5-69
+20-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:12:22-66
+21    <uses-permission android:name="android.permission.CAMERA" />
+21-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:13:5-65
+21-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:13:22-62
+22    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+22-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:14:5-71
+22-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:14:22-68
+23    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+23-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:15:5-81
+23-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:15:22-78
+24    <uses-permission android:name="android.permission.READ_CALENDAR" />
+24-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:16:5-72
+24-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:16:22-69
+25    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+25-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:17:5-72
+25-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:17:22-69
+26    <uses-permission android:name="android.permission.READ_CONTACTS" />
+26-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:18:5-72
+26-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:18:22-69
+27    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+27-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:19:5-80
+27-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:19:22-77
+28    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+28-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:20:5-77
+28-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:20:22-74
+29    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+29-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:21:5-75
+29-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:21:22-72
+30    <uses-permission android:name="android.permission.READ_SMS" />
+30-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:22:5-67
+30-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:22:22-64
+31    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+31-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:23:5-70
+31-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:23:22-67
+32    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+32-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:24:5-70
+32-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:24:22-67
+33    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+33-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:25:5-75
+33-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:25:22-72
+34    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+34-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:26:5-71
+34-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:26:22-68
+35    <uses-permission android:name="android.permission.SEND_SMS" />
+35-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:27:5-67
+35-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:27:22-64
+36    <uses-permission android:name="android.permission.USE_SIP" />
+36-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:28:5-66
+36-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:28:22-63
+37    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+37-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:29:5-73
+37-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:29:22-70
+38    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+38-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:30:5-73
+38-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:30:22-70
+39    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+39-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:31:5-73
+39-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:31:22-70
+40    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+40-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:32:5-81
+40-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:32:22-78
+41    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+41-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:34:5-88
+41-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:34:22-85
+42    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+42-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:35:5-79
+42-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:35:22-76
+43    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+43-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:36:5-77
+43-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:36:22-74
+44    <uses-permission android:name="com.android.voicemail.permission.ADD_VOICEMAIL" />
+44-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:38:5-86
+44-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:38:22-83
+45
+46    <queries>
+46-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:39:2-44:15
+47        <intent>
+47-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:40:8-43:14
+48            <action android:name="android.intent.action.VIEW" />
+48-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:41:9-61
+48-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:41:17-58
+49
+50            <data android:mimeType="*/*" />
+50-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:42:9-40
+50-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:42:15-37
+51        </intent>
+52    </queries>
+53
+54    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+54-->[com.facebook.flipper:flipper:0.125.0] /Users/machd/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+54-->[com.facebook.flipper:flipper:0.125.0] /Users/machd/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+55    <!--
+56         Required to keep CPU alive while downloading files
+57        (NOT to keep screen awake)
+58    -->
+59    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required to access Google Play Licensing -->
+59-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-68
+59-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:22-65
+60    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+60-->[:rn-fetch-blob] /Users/machd/Desktop/Practice/Demo/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-73
+60-->[:rn-fetch-blob] /Users/machd/Desktop/Practice/Demo/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-70
+61
+62    <application
+62-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:45:5-69:19
+63        android:name="com.demo.MainApplication"
+63-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:46:7-38
+64        android:allowBackup="false"
+64-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:51:7-34
+65        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+65-->[androidx.core:core:1.7.0] /Users/machd/.gradle/caches/transforms-3/63a3df243d2d102452600006144a86df/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+66        android:debuggable="true"
+67        android:icon="@mipmap/ic_launcher"
+67-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:48:7-41
+68        android:label="@string/app_name"
+68-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:47:7-39
+69        android:launchMode="singleTop"
+69-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:49:8-38
+70        android:requestLegacyExternalStorage="true"
+70-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:52:8-51
+71        android:roundIcon="@mipmap/ic_launcher_round"
+71-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:50:7-52
+72        android:theme="@style/AppTheme"
+72-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:56:7-38
+73        android:usesCleartextTraffic="true" >
+73-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:53:8-43
+74        <activity
+74-->/Users/machd/Desktop/Practice/Demo/android/app/src/debug/AndroidManifest.xml:11:9-111
+75            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+75-->/Users/machd/Desktop/Practice/Demo/android/app/src/debug/AndroidManifest.xml:11:19-83
+76            android:exported="false" />
+76-->/Users/machd/Desktop/Practice/Demo/android/app/src/debug/AndroidManifest.xml:11:84-108
+77        <activity
+77-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:57:7-68:18
+78            android:name="com.demo.MainActivity"
+78-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:58:9-37
+79            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+79-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:60:9-118
+80            android:exported="true"
+80-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:63:9-32
+81            android:label="@string/app_name"
+81-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:59:9-41
+82            android:launchMode="singleTask"
+82-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:61:9-40
+83            android:windowSoftInputMode="adjustResize" >
+83-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:62:9-51
+84            <intent-filter>
+84-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:64:9-67:25
+85                <action android:name="android.intent.action.MAIN" />
+85-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:65:13-65
+85-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:65:21-62
+86
+87                <category android:name="android.intent.category.LAUNCHER" />
+87-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:66:13-73
+87-->/Users/machd/Desktop/Practice/Demo/android/app/src/main/AndroidManifest.xml:66:23-70
+88            </intent-filter>
+89        </activity>
+90
+91        <provider
+91-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-45:20
+92            android:name="com.ReactNativeBlobUtil.Utils.FileProvider"
+92-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-70
+93            android:authorities="com.demo.provider"
+93-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-60
+94            android:exported="false"
+94-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-37
+95            android:grantUriPermissions="true" >
+95-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-47
+96            <meta-data
+96-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+97                android:name="android.support.FILE_PROVIDER_PATHS"
+97-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+98                android:resource="@xml/provider_paths" />
+98-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+99        </provider>
+100        <provider
+100-->[:rn-fetch-blob] /Users/machd/Desktop/Practice/Demo/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-42:20
+101            android:name="com.RNFetchBlob.Utils.FileProvider"
+101-->[:rn-fetch-blob] /Users/machd/Desktop/Practice/Demo/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-62
+102            android:authorities="com.demo.provider"
+102-->[:rn-fetch-blob] /Users/machd/Desktop/Practice/Demo/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-60
+103            android:exported="false"
+103-->[:rn-fetch-blob] /Users/machd/Desktop/Practice/Demo/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-37
+104            android:grantUriPermissions="true" >
+104-->[:rn-fetch-blob] /Users/machd/Desktop/Practice/Demo/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-47
+105            <meta-data
+105-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+106                android:name="android.support.FILE_PROVIDER_PATHS"
+106-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+107                android:resource="@xml/provider_paths" />
+107-->[:react-native-blob-util] /Users/machd/Desktop/Practice/Demo/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+108        </provider>
+109        <provider
+109-->[androidx.emoji2:emoji2:1.0.0] /Users/machd/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+110            android:name="androidx.startup.InitializationProvider"
+110-->[androidx.emoji2:emoji2:1.0.0] /Users/machd/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+111            android:authorities="com.demo.androidx-startup"
+111-->[androidx.emoji2:emoji2:1.0.0] /Users/machd/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+112            android:exported="false" >
+112-->[androidx.emoji2:emoji2:1.0.0] /Users/machd/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+113            <meta-data
+113-->[androidx.emoji2:emoji2:1.0.0] /Users/machd/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+114                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+114-->[androidx.emoji2:emoji2:1.0.0] /Users/machd/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+115                android:value="androidx.startup" />
+115-->[androidx.emoji2:emoji2:1.0.0] /Users/machd/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+116            <meta-data
+116-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/machd/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+117                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+117-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/machd/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+118                android:value="androidx.startup" />
+118-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/machd/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+119        </provider>
+120    </application>
+121
+122</manifest>

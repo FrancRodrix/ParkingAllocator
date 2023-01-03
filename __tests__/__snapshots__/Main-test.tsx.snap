@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#f0e130",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 80,
+        "fontWeight": "100",
+        "marginTop": -200,
+      }
+    }
+  >
+     Parking Allocator
+  </Text>
+  <TextInput
+    keyboardType="numeric"
+    onChangeText={[Function]}
+    placeholder="SLOTS TO BOOK"
+    placeholderTextColor="grey"
+    style={
+      {
+        "backgroundColor": "#fff",
+        "borderColor": "#000",
+        "borderRadius": 10,
+        "letterSpacing": 5,
+        "textAlign": "center",
+        "width": "70%",
+      }
+    }
+    testID="inputData"
+    value=""
+  />
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "backgroundColor": "#DE3163",
+        "borderRadius": 10,
+        "marginTop": 15,
+        "opacity": 1,
+        "padding": 15,
+        "width": "70%",
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#fff",
+          "fontWeight": "700",
+          "letterSpacing": 10,
+          "textAlign": "center",
+        }
+      }
+    >
+      SUBMIT
+    </Text>
+  </View>
+</View>
+`;

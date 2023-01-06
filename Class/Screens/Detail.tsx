@@ -8,7 +8,8 @@ import {
   Modal,
   ToastAndroid,
   ActivityIndicator,
-  Platform
+  Platform,
+  TextInput
 } from 'react-native';
 import moment from 'moment';
 
@@ -28,6 +29,8 @@ interface SS {
   payment: boolean;
   loader: boolean;
   randomArray: any;
+  registrationView:boolean
+  regNumber:any;
 }
 
 export default class Detail extends React.Component<Props, SS> {
@@ -44,6 +47,8 @@ export default class Detail extends React.Component<Props, SS> {
       payment: false,
       loader: false,
       randomArray: [],
+      registrationView:false,
+      regNumber:''
     };
   }
 
@@ -64,9 +69,10 @@ export default class Detail extends React.Component<Props, SS> {
   };
 
   generateNumberPlate = () => {
-    const r: any = (x: any) => ~~(Math.random() * x) + '';
-    const l: any = (x: any) => [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'][r(26)];
-    return r(10) + r(10) + r(10) + '-' + l() + l() + l();
+    // const r: any = (x: any) => ~~(Math.random() * x) + '';
+    // const l: any = (x: any) => [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'][r(26)];
+    // return r(10) + r(10) + r(10) + '-' + l() + l() + l();
+    return this.state.regNumber
   };
 
   createSlots(input: any) {
@@ -93,7 +99,9 @@ export default class Detail extends React.Component<Props, SS> {
         } else {
           rate = hoursDiff * 10;
         }
-        arr[arr.indexOf(c)] = {...c, rate: rate};
+        arr[arr.indexOf(c)] = {...c, rate:rate};
+        arr[arr.indexOf(c)] = {...c, startTime:c.start};
+        arr[arr.indexOf(c)] = {...c, endTime:c.end};
       }
     });
     this.setState({
@@ -118,6 +126,7 @@ export default class Detail extends React.Component<Props, SS> {
   // }
 
   park(carId: any) {
+    this.setState({registrationView:false})
     console.log(`Parking car: ${carId}`);
     let start = moment();
 
@@ -138,6 +147,7 @@ export default class Detail extends React.Component<Props, SS> {
     }
     this.setState({
       rows: [...this.state.rows],
+      regNumber:''
     });
   }
 
@@ -216,41 +226,48 @@ export default class Detail extends React.Component<Props, SS> {
     });
 
     this.calculateCharges(this.state.rows, id);
-
     this.state.rows.map((f: any, d: any) => {
-      if (f.rate) {
+      if (f) {
         this.setState({
           carDetails: f,
         });
+       
       }
     });
+  
   }
 
 
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity
+        {/* <TouchableOpacity
+        testID='backButton'
           onPress={() => {
-            this.props.navigation.goBack();
+            // this.props.navigation.goBack();
           }}>
           <Text style={{color: '#fff'}}>Back</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity
+        testID='parkButton'
           disabled={this.state.disabled}
           style={styles.parkButton}
           onPress={() => {
-            this.handleAddToParking(this.generateNumberPlate());
+            // this.handleAddToParking(this.generateNumberPlate());
+            this.setState({registrationView:true})
           }}>
-          <Text style={styles.parkingText}>PARK</Text>
+          <Text testID='parkName' style={styles.parkingText}>PARK</Text>
         </TouchableOpacity>
+
         <FlatList
+        testID='Slots'
           numColumns={2}
           data={this.state.rows}
           extraData={this.state}
           renderItem={({item, index}) => {
             return (
               <TouchableOpacity
+              testID='parkinglot'
                 onPress={() => {
                   if (item.busy == true) {
                     this.setState({
@@ -277,26 +294,40 @@ export default class Detail extends React.Component<Props, SS> {
         />
         {this.state.modalVisible ? (
           <Modal
+          testID='modalView'
             animationType="slide"
             transparent={true}
             visible={this.state.modalVisible}>
             <View style={styles.centeredView}>
               <View style={styles.modalView}>
-                {this.state.payment ? null : (
+              {this.state.payment ? null : ( 
                   <TouchableOpacity
+                  testID='modalButton'
                     onPress={() => {
                       this.setState({
-                        modalVisible: false,
+                        modalVisible:false,
                       });
                     }}>
                     <Text style={styles.close}>close</Text>
                   </TouchableOpacity>
-                )}
+                 )
+                } 
 
                 <Text style={styles.NumPlate}>
                   <Text style={{fontSize: 20, color: '#000'}}>Vehicle No:</Text>
                   {this.state.carDetails.car}
                 </Text>
+                <View style={styles.time}>
+                <Text style={styles.NumPlate}>
+                  <Text style={{fontSize: 20, color: '#000'}}>Start:</Text>
+                  {moment(this.state.carDetails.start).format("HH:mm:ss")}
+                </Text>
+                <Text style={styles.NumPlate}>
+                  <Text style={{fontSize: 20, color: '#000'}}>  End:</Text>
+                  {moment(this.state.carDetails.end).format("HH:mm:ss")}
+                </Text>
+                </View>
+               
                 {this.state.loader ? (
                   <ActivityIndicator
                     size="small"
@@ -320,6 +351,7 @@ export default class Detail extends React.Component<Props, SS> {
                 )}
 
                 <TouchableOpacity
+                testID='deAllocate'
                   disabled={!this.state.payment}
                   onPress={() => {
                     this.remove(this.state.rows, this.state.carNum);
@@ -336,7 +368,42 @@ export default class Detail extends React.Component<Props, SS> {
               </View>
             </View>
           </Modal>
-        ) : null}
+         ) : null} 
+
+<Modal
+testID='RegModal'
+            animationType="slide"
+            transparent={true}
+            visible={this.state.registrationView}>
+            <View style={styles.regBackView}>
+              <View style={styles.regView}>
+
+                <Text style={styles.regHeading}>Enter Registration Number</Text>
+                <TextInput
+                placeholder='Vehicle no'
+                style={styles.textInput}
+                testID={'inputData'}
+                onChangeText={(text: any) => {
+                  this.setState({regNumber:text})
+                }}
+             
+                value={this.state.regNumber}
+                />
+                <TouchableOpacity
+                testID='allocate'
+                style={styles.confirmButton}
+                 onPress={() => {
+                  this.handleAddToParking(this.generateNumberPlate());
+                }}               
+                >
+                  <Text style={styles.cnfimText}>CONFIRM</Text>
+                </TouchableOpacity>
+                
+                </View>
+                </View>
+                </Modal>
+
+
       </SafeAreaView>
     );
   }
@@ -384,9 +451,8 @@ const styles = StyleSheet.create({
     marginTop: -50,
   },
   modalView: {
-    flex: 0.4,
+    flex: 0.5,
     width: '90%',
-    height: '45%',
     backgroundColor: 'white',
     borderRadius: 20,
     padding: 15,
@@ -446,4 +512,56 @@ const styles = StyleSheet.create({
     fontWeight: '00',
     marginTop: 70,
   },
+  textInput: {
+    alignSelf:"center",
+    // borderWidth:1,
+    borderColor: '#000',
+    borderRadius: 10,
+    width: '70%',
+    textAlign: 'center',
+    letterSpacing: 5,
+    backgroundColor: '#fff',
+    borderWidth:1
+  },
+  regHeading:{
+    alignSelf:'center',
+    fontSize:15,
+    color:'#000',
+    fontWeight:'bold',
+    paddingBottom:10
+  },
+  confirmButton:{
+    alignSelf:'center',
+   borderRadius:10,
+   padding:10,
+   backgroundColor:'green',
+   width:'40%',
+   marginVertical:20
+  },
+  cnfimText:{
+textAlign:'center',
+color:'#fff',
+fontWeight:"800",
+letterSpacing:1.5
+  },
+  regBackView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#000000aa',
+    marginTop: -50,
+  },
+  regView:{ 
+      flex: 0.3,
+      width: '90%',
+      height: '35%',
+      backgroundColor: 'white',
+      borderRadius: 20,
+      padding: 15,
+  },
+  time:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'flex-start'
+  }
 });

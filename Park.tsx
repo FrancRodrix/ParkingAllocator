@@ -8,6 +8,7 @@ import {
   Modal,
   ToastAndroid,
   ActivityIndicator,
+  TextInput
 } from 'react-native';
 import moment from 'moment';
 
@@ -16,6 +17,11 @@ import React, {useState, useEffect} from 'react';
 interface Props {
   navigation: any;
   route: any;
+  disabled:boolean
+  modalVisible:boolean;
+  rows:any;
+  payment:boolean;
+  loader:boolean
 }
 
 export default function Park(props: Props) {
@@ -28,6 +34,8 @@ export default function Park(props: Props) {
   const [payment, setPayment] = useState(false);
   const [loader, setLoader] = useState(false);
   const [randomArray, setRandomArray] = useState([]);
+  const[ registrationView,setRegistrationView]=useState(false);
+  const[regNumber,setRegnumber]=useState('')
 
   useEffect(() => {
     createSlots(slotCount);
@@ -46,9 +54,10 @@ export default function Park(props: Props) {
   };
 
   const generateNumberPlate = () => {
-    const r: any = (x: any) => ~~(Math.random() * x) + '';
-    const l: any = (x: any) => [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'][r(26)];
-    return r(10) + r(10) + r(10) + '-' + l() + l() + l();
+    // const r: any = (x: any) => ~~(Math.random() * x) + '';
+    // const l: any = (x: any) => [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'][r(26)];
+    // return r(10) + r(10) + r(10) + '-' + l() + l() + l();
+    return regNumber
   };
 
   function createSlots(input: any) {
@@ -97,6 +106,7 @@ export default function Park(props: Props) {
 
   function park(carId: any) {
     console.log(`Parking car: ${carId}`);
+    setRegistrationView(false)
 
     let start = moment();
 
@@ -113,6 +123,7 @@ export default function Park(props: Props) {
       };
     }
     setRows([...rows]);
+    setRegnumber('')
     console.log(rows, 'WITH RATE');
   }
 
@@ -190,27 +201,30 @@ export default function Park(props: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         onPress={() => {
           props.navigation.goBack();
         }}>
         <Text style={{color: '#fff'}}>Back</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <TouchableOpacity
+      testID='ParkButton'
         disabled={disabled}
         style={styles.parkButton}
         onPress={() => {
-          handleAddToParking(generateNumberPlate());
+          setRegistrationView(true)
         }}>
         <Text style={styles.parkingText}>PARK</Text>
       </TouchableOpacity>
       <FlatList
+      testID='list'
         numColumns={2}
         data={rows}
         extraData={this.state}
         renderItem={({item, index}) => {
           return (
             <TouchableOpacity
+            testID='ParkingSlot'
               onPress={() => {
                 if (item.busy == true) {
                   setModalVisible(true);
@@ -232,23 +246,35 @@ export default function Park(props: Props) {
           );
         }}
       />
-      {modalVisible ? (
-        <Modal animationType="slide" transparent={true} visible={modalVisible}>
+        <Modal testID='modal' animationType="slide" transparent={true} visible={modalVisible}>
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               {payment ? null : (
                 <TouchableOpacity
+                testID='Close'
                   onPress={() => {
                     setModalVisible(false);
                   }}>
                   <Text style={styles.close}>close</Text>
                 </TouchableOpacity>
-              )}
+             )}
+         
 
-              <Text style={styles.NumPlate}>
+              <Text testID='name' style={styles.NumPlate}>
                 <Text style={{fontSize: 20, color: '#000'}}>Vehicle No:</Text>
                 {carDetails.car}
               </Text>
+              <View style={styles.time}>
+                <Text style={styles.NumPlate}>
+                  <Text style={{fontSize: 20, color: '#000'}}>Start:</Text>
+                  {moment(carDetails.start).format("HH:mm:ss")}
+                </Text>
+                <Text style={styles.NumPlate}>
+                  <Text style={{fontSize: 20, color: '#000'}}>  End:</Text>
+                  {moment(carDetails.end).format("HH:mm:ss")}
+                </Text>
+                </View>
+               
               {loader ? (
                 <ActivityIndicator
                   size="small"
@@ -264,6 +290,7 @@ export default function Park(props: Props) {
 
               {payment ? null : (
                 <TouchableOpacity
+                testID='payButton'
                   onPress={() => {
                     asyncPostCall();
                   }}
@@ -273,6 +300,7 @@ export default function Park(props: Props) {
               )}
 
               <TouchableOpacity
+              testID='del'
                 disabled={!payment}
                 onPress={() => {
                   remove(rows, carNum);
@@ -284,7 +312,41 @@ export default function Park(props: Props) {
             </View>
           </View>
         </Modal>
-      ) : null}
+
+       <Modal
+         testID='RegModal'
+            animationType="slide"
+            transparent={true}
+            visible={registrationView}>
+            <View style={styles.regBackView}>
+              <View style={styles.regView}>
+
+                <Text testID='textReg' style={styles.regHeading}>Enter Registration Number</Text>
+                <TextInput
+                placeholder='Vehicle no'
+                style={styles.textInput}
+                testID={'inputData'}
+                onChangeText={(text: any) => {
+                  setRegnumber(text)
+                  // this.setState({regNumber:text})
+                }}
+             
+                value={regNumber}
+                />
+                <TouchableOpacity
+                testID='allocate'
+                style={styles.confirmButton}
+                 onPress={() => {
+                  handleAddToParking(generateNumberPlate());
+                }}               
+                >
+                  <Text style={styles.cnfimText}>CONFIRM</Text>
+                </TouchableOpacity>
+                
+                </View>
+                </View>
+                </Modal> 
+
     </SafeAreaView>
   );
 }
@@ -331,12 +393,12 @@ const styles = StyleSheet.create({
     marginTop: -50,
   },
   modalView: {
-    flex: 0.4,
-    width: '90%',
-    height: '45%',
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 15,
+      flex: 0.5,
+      width: '90%',
+      backgroundColor: 'white',
+      borderRadius: 20,
+      padding: 15,
+   
   },
   textStyle: {
     color: 'white',
@@ -393,4 +455,56 @@ const styles = StyleSheet.create({
     fontWeight: '00',
     marginTop: 70,
   },
+  textInput: {
+    alignSelf:"center",
+    // borderWidth:1,
+    borderColor: '#000',
+    borderRadius: 10,
+    width: '70%',
+    textAlign: 'center',
+    letterSpacing: 5,
+    backgroundColor: '#fff',
+    borderWidth:1
+  },
+  regHeading:{
+    alignSelf:'center',
+    fontSize:15,
+    color:'#000',
+    fontWeight:'bold',
+    paddingBottom:10
+  },
+  confirmButton:{
+    alignSelf:'center',
+   borderRadius:10,
+   padding:10,
+   backgroundColor:'green',
+   width:'40%',
+   marginVertical:20
+  },
+  cnfimText:{
+textAlign:'center',
+color:'#fff',
+fontWeight:"800",
+letterSpacing:1.5
+  },
+  regBackView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#000000aa',
+    marginTop: -50,
+  },
+  regView:{ 
+      flex: 0.3,
+      width: '90%',
+      height: '35%',
+      backgroundColor: 'white',
+      borderRadius: 20,
+      padding: 15,
+  },
+  time:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'flex-start'
+  }
 });

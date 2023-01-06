@@ -24,7 +24,6 @@ export default class Main extends Component <Props>{
 
   render() {
     return (
-
         <KeyboardAvoidingView style={styles.container}>
         <Text style={styles.head}> Parking Allocator</Text>
         <TextInput
@@ -40,11 +39,12 @@ export default class Main extends Component <Props>{
           keyboardType={'numeric'}
         />
         <TouchableOpacity
+        testID="SubmitButton"
           style={styles.submitButton}
           onPress={() => {
             if(this.state.slot){
               this.setState({slot:''}),
-              this.props.navigation.navigate('Detail', {
+              this.props.navigation.navigate('ParkScreen', {
                  slots:this.state.slot,
                })
             }       
